@@ -16,11 +16,11 @@ Author: [@DavideGioiosa](https://github.com/DavideGioiosa)
 Is it possible to use complexity as a parameter to automatically generate music? This is the question that motivates our research. In the area of automatic music composition, several neural network models have been implemented to generate music of a certain musical genre, e.g. rock, pop, jazz, or to capture and imitate the style of a composer.
 Recent studies in this area of research, focus on providing the ability not only to generate music, but also to be able to condition the creative process.
 
-From previous researches we know that complexity is a parameter closely related to the amount of brain activity of the listener (the so-called "arousal potential"). It also affects a person's musical preferences. Given this close correlation with a listener's perceptions, we decide to explore the use of this parameter in music.
+> From previous researches we know that complexity is a parameter closely related to the amount of brain activity of the listener (the so-called "arousal potential"). It also affects a person's musical preferences. Given this close correlation with a listener's perceptions, we decide to explore the use of this parameter in music.
 
 Complexity is present in each of the aspects in which the music can be divided, e.g. chords, rhythm, melody, etc. Among these we choose to focus on the harmony. In particular, in this work we explore **Harmonic Complexity** and its use as a parameter to condition the generation of chord sequences. 
 
-For the automatic generation process we exploit two conditional neural network models both based on the Variational Autoencoder. We evaluated, through a perceptual test, the ability to generate chord sequences give a desired complexity values. 
+For the automatic generation process we exploit two Conditional Neural Network models both based on the **Variational Autoencoder** (VAE). We evaluated, through a perceptual test, the ability to generate chord sequences give a desired complexity values. 
 
 ## Dataset
 
