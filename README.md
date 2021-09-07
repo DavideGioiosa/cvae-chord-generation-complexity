@@ -2,9 +2,7 @@
 
 # Modeling Harmonic Complexity in Automatic Music Generation using Conditional Variational Autoencoders
 
-07/04/2021
-
-Davide Gioiosa
+Author: Davide Gioiosa
 
 # Goal 
 
@@ -18,18 +16,29 @@ For the automatic generation process we exploit two conditional neural network m
 
 # Dataset
 
-The dataset used for this experimental thesis comes from this research: https://www.researchgate.net/publication/320029367_A_Data-Driven_Model_of_Tonal_Chord_Sequence_Complexity. 
+The starting dataset used for this experimental thesis comes from this research: https://www.researchgate.net/publication/320029367_A_Data-Driven_Model_of_Tonal_Chord_Sequence_Complexity, containing 5-chord sequences associated with a complexity bin.
 
 # Conditional Variational Autoencoder
+The Conditional Variational Autoencoder (CVAE) is an extension of the VAE model and it's a type of Conditional Architectures, which are networks characterized by the addition of the conditioning feature as an additional input layer to the network model. This type of model provide the ability to have a control over the data during the generation process through the conditioning with the target feature.
 <p align="center"><img width="500" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/Conditional_VAE.png"></p>
 
 # Model A
+This first model of CVAE incorporates the conditioning information by concatenating the layer at the input of both the encoder.
 <p align="center"><img width="500" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_1.png"></p>
 
 # Model B
+This second model of CVAE is composed by the combination of the standard VAE with a Regressor, which has as input the complexity value that explicitly conditions the latent representation z of the data X.
 <p align="center"><img width="500" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2.png"></p>
+
+With this model we obtained a disentangled-dimension in the latent space that models the harmonic complexity feature. 
+<p align="center"><img width="500" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_latent_space.png"></p>
 
 # Generation of new chord progressions
 <p align="center"><img width="500" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAEs_sampling.png"></p>
+
+# Listening Test
+A web-app has been designed using Flask to collect ratings on the generated sequences. In the fist part of the experiment, the participants are profied based on their music background using the self-report questionnaire of the Goldsmiths Musical Sophistication Index (https://www.gold.ac.uk/music-mind-brain/gold-msi/). The second part is the perceptual test in which the participants were asked to express their level of agreement to the indicated complexity value provided for each chord progressions. The evaluation is expressed using the Likert scale scores from 0 to 4, where completely agree is the highest score and completely disagree the lowest one.
+
+
 
 More detailed information about the study can be found in the thesis.
