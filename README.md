@@ -16,9 +16,20 @@ From previous researches we know that complexity is a parameter closely related 
 Complexity is present in each of the aspects in which the music can be divided, e.g. chords, rhythm, melody, etc. Among these we choose to focus on the harmony. In particular, in this work we explore harmonic complexity and its use as a parameter to condition the generation of chord sequences. 
 For the automatic generation process we exploit two conditional neural network models both based on the Variational Autoencoder. We evaluated, through a perceptual test, the ability to generate chord sequences give a desired complexity values. 
 
+# Dataset
+
+The dataset used for this experimental thesis comes from this research: https://www.researchgate.net/publication/320029367_A_Data-Driven_Model_of_Tonal_Chord_Sequence_Complexity. 
+
 # Conditional Variational Autoencoder
-![Prova](master-thesis-polimi/Img/Conditional_VAE.png)
+<p align="center"><img width="500" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/Conditional_VAE.png"></p>
 
-# Model 1
+# Model A
+<p align="center"><img width="500" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_1.png"></p>
 
-# Model 2
+# Model B
+<p align="center"><img width="500" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2.png"></p>
+
+# Generation of new chord progressions
+<p align="center"><img width="500" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAEs_sampling.png"></p>
+
+More detailed information about the study can be found in the thesis.
