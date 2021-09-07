@@ -1,4 +1,4 @@
-<p align="center"><img width="200" src="https://camo.githubusercontent.com/7bc40fff3c166508ead40e4ec7354e4d616bdd1a7733941d2ae75a154668958d/68747470733a2f2f63646e2e737461746963616c6c792e696f2f696d672f706e67696d6167652e6e65742f77702d636f6e74656e742f75706c6f6164732f323031382f30362f706f6c697465636e69636f2d6d696c616e6f2d6c6f676f2d706e672d352e706e67"></p>
+<p align="center"><img width="150" src="https://camo.githubusercontent.com/7bc40fff3c166508ead40e4ec7354e4d616bdd1a7733941d2ae75a154668958d/68747470733a2f2f63646e2e737461746963616c6c792e696f2f696d672f706e67696d6167652e6e65742f77702d636f6e74656e742f75706c6f6164732f323031382f30362f706f6c697465636e69636f2d6d696c616e6f2d6c6f676f2d706e672d352e706e67"></p>
 
 # Modeling Harmonic Complexity in Automatic Music Generation using Conditional Variational Autoencoders
 
@@ -30,7 +30,7 @@ The starting dataset used for this experimental thesis comes from this research:
 
 ## Conditional Variational Autoencoder
 The Conditional Variational Autoencoder (CVAE) is an extension of the VAE model and it's a type of Conditional Architectures, which are networks characterized by the addition of the conditioning feature as an additional input layer to the network model. This type of model provide the ability to have a control over the data during the generation process through the conditioning with the target feature.
-<p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/Conditional_VAE.png"></p>
+<p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/Conditional_VAE.png" ></p>
 
 
 ### Model A
@@ -44,19 +44,21 @@ This second model of CVAE is composed by the combination of the standard VAE wit
 The interesting thing of this model is that it allows us to explicitly condition the distribution of the data in the latent space with respect to the harmonic complexity, obtaining a disentangled-dimension that encodes this property. 
 <p align="center"><img width="200" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_latent_space.png"></p>
 
-### Generation of new chord progressions
+#### Generation of new chord progressions
 The two trained CVAE can generate new chord sequences with the desired harmonic complexity.
 <p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAEs_sampling.png"></p>
 
-### Listening Test  
+#### Listening Test  
 A web-app has been designed using **Flask** and **AWS** to collect ratings on the generated sequences. In the fist part of the experiment, the participants are profied based on their music background using the self-report questionnaire of the _[Goldsmiths Musical Sophistication Index](https://www.gold.ac.uk/music-mind-brain/gold-msi/)_. The second part is the perceptual test in which the participants were asked to express their level of agreement to the indicated complexity value provided for each chord progressions. The evaluation is expressed using the Likert scale scores from 0 to 4, where completely agree is the highest score and completely disagree the lowest one.
 
-# Results Conclusion
-**Model A**
-<p align="center"><img width="300" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_1_results.png"></p>
-**Model B**
-<p align="center"><img width="300" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_results.png"></p>
+### Results and Conclusion
+<p align="center"> Model A </p>
+<p align="center"><img width="350" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_1_results.png"></p>
+
+<p align="center"> Model B </p>
+<p align="center"><img width="350" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_results.png"></p>
 
 The results obtained from user ratings on the generated samples show high agreement values with the complexity values given by our models. In particular, _CVAE A_ performs better for sequences with high complexity values, reaching the **78.6%** of the users’ approval (>40% are completely agree ratings), while _CVAE B_ performs better for sequences with low complexity, reaching the **67.5%** of agreement. Considering the assumptions about the diffilty of our objective and evaluating the results obtained, we can defie both networks capable of modeling complexity as a parameter in chord generation.
+
 
 ***More detailed information about the study can be found in the thesis.***
