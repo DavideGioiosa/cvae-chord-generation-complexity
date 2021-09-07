@@ -46,7 +46,7 @@ The interesting thing of this model is that it allows us to explicitly condition
 
 #### Generation of new chord progressions
 The two trained CVAE can generate new chord sequences with the desired harmonic complexity.
-<p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAEs_sampling.png"></p>
+<p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAEs_generation.png"></p>
 
 #### Listening Test  
 A web-app has been designed using **Flask** and **AWS** to collect ratings on the generated sequences. In the fist part of the experiment, the participants are profied based on their music background using the self-report questionnaire of the _[Goldsmiths Musical Sophistication Index](https://www.gold.ac.uk/music-mind-brain/gold-msi/)_. The second part is the perceptual test in which the participants were asked to express their level of agreement to the indicated complexity value provided for each chord progressions. The evaluation is expressed using the Likert scale scores from 0 to 4, where completely agree is the highest score and completely disagree the lowest one.
