@@ -11,6 +11,7 @@ Author: [@DavideGioiosa](https://github.com/DavideGioiosa)
 - Flask
 - HTML, CSS, Javascript
 
+
 ## Goal 
 
 Is it possible to use complexity as a parameter to automatically generate music? This is the question that motivates our research. In the area of automatic music composition, several neural network models have been implemented to generate music of a certain musical genre _e.g. rock, pop, jazz_, or to capture and imitate the style of a composer.
@@ -42,23 +43,21 @@ This second model of CVAE is composed by the combination of the standard VAE wit
 <p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2.png"></p>
 
 The interesting thing of this model is that it allows us to explicitly condition the distribution of the data in the latent space with respect to the harmonic complexity, obtaining a disentangled-dimension that encodes this property. 
-<p align="center"><img width="200" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_latent_space.png"></p>
+<p align="center"><img width="250" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_latent_space.png"></p>
 
 #### Generation of new chord progressions
 The two trained CVAE can generate new chord sequences with the desired harmonic complexity.
 <p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAEs_generation.png"></p>
 
+### AUDIO EXAMPLES
+
+
 #### Listening Test  
 A web-app has been designed using **Flask** and **AWS** to collect ratings on the generated sequences. In the fist part of the experiment, the participants are profied based on their music background using the self-report questionnaire of the _[Goldsmiths Musical Sophistication Index](https://www.gold.ac.uk/music-mind-brain/gold-msi/)_. The second part is the perceptual test in which the participants were asked to express their level of agreement to the indicated complexity value provided for each chord progressions. The evaluation is expressed using the Likert scale scores from 0 to 4, where completely agree is the highest score and completely disagree the lowest one.
 
 ### Results and Conclusion
-<p align="center"> Model A </p>
-<p align="center"><img width="350" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_1_results.png"></p>
 
-<p align="center"> Model B </p>
-<p align="center"><img width="350" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_results.png"></p>
-
-The results obtained from user ratings on the generated samples show high agreement values with the complexity values given by our models. In particular, _CVAE A_ performs better for sequences with high complexity values, reaching the **78.6%** of the users’ approval (>40% are completely agree ratings), while _CVAE B_ performs better for sequences with low complexity, reaching the **67.5%** of agreement. Considering the assumptions about the diffilty of our objective and evaluating the results obtained, we can defie both networks capable of modeling complexity as a parameter in chord generation.
+The results obtained from user ratings on the generated samples show high agreement values with the complexity values given by our models. In particular, _CVAE A_ performs better for sequences with high complexity values, reaching the **78.6%** of the users’ approval (>40% are completely agree ratings), while _CVAE B_ performs better for sequences with low complexity, reaching the **67.5%** of agreement. Considering the assumptions about the difficulty of our objective and the limitations due to the dataset, evaluating the results obtained we can define both networks capable of modeling harmonic complexity as a parameter in chord generation.
 
 
 ***More detailed information about the study can be found in my thesis work.***
