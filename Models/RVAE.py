@@ -10,23 +10,29 @@ import constant
 
 class RegressionVAE:
     def __init__(self, latent_dim=2, intermediate_dim=512,
-                 n_epochs=250):
+                 n_epochs=250, bool_load_model=False):
+        if not bool_load_model:
+            self.latent_dim = latent_dim
+            self.intermediate_dim = intermediate_dim
+            self.n_epochs = n_epochs
+            self.original_dim = constant.N_MEASURES * constant.N_PITCHES  # 5x12
 
-        self.latent_dim = latent_dim
-        self.intermediate_dim = intermediate_dim
-        self.n_epochs = n_epochs
-        self.original_dim = constant.N_MEASURES * constant.N_PITCHES  # 5x12
+            self.input_sequence = tf.keras.Input(shape=(self.original_dim,), name='input_sequence')  # flat input
+            self.inputs_r = tf.keras.Input(shape=(1,), name='ground_truth')  # harmonic complexity val
 
-        self.input_sequence = tf.keras.Input(shape=(self.original_dim,), name='input_sequence')  # flat input
-        self.inputs_r = tf.keras.Input(shape=(1,), name='ground_truth')  # harmonic complexity val
+            self.encoder = self.__build_encoder()
+            self.decoder = self.__build_decoder()
 
-        self.encoder = self.__build_encoder()
-        self.decoder = self.__build_decoder()
+            # instantiate VAE model
+            self.decoder_outputs = self.decoder(self.encoder([self.input_sequence, self.inputs_r])[2])  # [2]: z
+            self.regression_vae = tf.keras.Model([self.input_sequence, self.inputs_r], self.decoder_outputs)
+            self.__set_loss()
 
-        # instantiate VAE model
-        self.decoder_outputs = self.decoder(self.encoder([self.input_sequence, self.inputs_r])[2])  # [2]: z
-        self.regression_vae = tf.keras.Model([self.input_sequence, self.inputs_r], self.decoder_outputs)
-        self.__set_loss()
+        # Load trained model
+        # else:
+        #    self.encoder = keras.models.load_model(constant.RVAE_ENCODER_PATH)
+        #    self.decoder = keras.models.load_model(constant.RVAE_DECODER_PATH)
+        #    self.regression_vae = keras.models.load_model(constant.RVAE_FULL_PATH)
 
     def __sampling(self, args):
         z_mean, z_log_sigma = args
