@@ -10,8 +10,8 @@ import constant
 
 class RegressionVAE:
     def __init__(self, latent_dim=2, intermediate_dim=512,
-                 n_epochs=250, bool_load_model=False):
-        if not bool_load_model:
+                 n_epochs=250, bool_new_model=True):
+        if bool_new_model:
             self.latent_dim = latent_dim
             self.intermediate_dim = intermediate_dim
             self.n_epochs = n_epochs
