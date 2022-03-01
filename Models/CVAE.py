@@ -106,7 +106,7 @@ class ConditionalVAE:
         self.conditional_vae.compile(optimizer='adam')
 
     def get_model_summary(self):
-        self.cvae.summary()
+        self.conditional_vae.summary()
 
     def train(self, train_chords_sequences_flat, train_harmonic_cmplx_bins_one_hot,
               valid_chords_sequences_flat, valid_harmonic_cmplx_bins_one_hot):
@@ -137,7 +137,7 @@ class ConditionalVAE:
         z_mean, _, _ = self.encoder.predict([chord_sequences_flat, harmonic_complexity_bins_one_hot])
         z_mean = np.asarray(z_mean)
         plt.figure(figsize=(7, 7))
-        plt.title('Latent Space: ' + data_subset_type)
+        plt.title('Generators: ' + data_subset_type)
         plt.scatter(z_mean[:, 0], z_mean[:, 1], c=harmonic_complexity_bins)
         plt.colorbar()
         plt.xlabel("z[0]")

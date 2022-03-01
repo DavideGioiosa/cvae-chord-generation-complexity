@@ -86,6 +86,9 @@ class RegressionVAE:
 
         return decoder
 
+    def get_model_summary(self):
+        self.regression_vae.summary()
+
     def __kl_loss(self, z_mean, pz_mean, z_log_var):
         kl_loss = 1 + z_log_var - tf.keras.backend.square(z_mean - pz_mean) - tf.keras.backend.exp(z_log_var)
         # kl_loss = 1 + z_log_var - pz_log_var - K.tf.divide(K.square(z_mean-pz_mean),K.exp(pz_log_var)) - K.tf.divide(K.exp(z_log_var),K.exp(pz_log_var))
@@ -133,7 +136,7 @@ class RegressionVAE:
             self.encoder.predict([chord_sequences_flat, harmonic_complexity_bins])
 
         plt.figure(figsize=(9, 9))
-        plt.title('Latent Space: ' + data_subset_type + ', Labels: Bin')
+        plt.title('Generators: ' + data_subset_type + ', Labels: Bin')
         plt.scatter(z_mean[:, 0], z_mean[:, 1], c=harmonic_complexity_bins)
         plt.colorbar()
         plt.xlabel("z[0]")
