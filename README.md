@@ -7,8 +7,8 @@ Author: [@DavideGioiosa](https://github.com/DavideGioiosa)
 ## Main Technologies
 - Python 3.7
 - Tensorflow, Keras
-- Pandas, Numpy
-- Flask
+- Pandas, Numpy, Matplotlib
+- Flask, AWS
 
 ## Goal 
 
