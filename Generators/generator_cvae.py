@@ -47,7 +47,7 @@ class GeneratorCVAE:
     def generate_with_complexity(self, c_bin):
         """
         Generate chords sequence with c_bin harmonic complexity
-        :param c_bin: complexity value [0-4]
+        :param c_bin: harmonic complexity bin [0-4]
         :return: chords sequence with the indicated harmonic complexity
         """
         if c_bin < 0 or c_bin > 4:
@@ -76,7 +76,7 @@ class GeneratorCVAE:
             return "Complexity Range is not correct, allowed values: [0, 4]"
 
         if z_x < -5 or z_x > 5 or z_y < -5 or z_y > 5:
-            print("Z values may be to high")
+            print("Z values may be too high")
 
         z_ = [z_x, z_y]
         vec = self.get_latent_vector(c_bin, z_)  # concat with complexity
