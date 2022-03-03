@@ -16,7 +16,7 @@ class RegressionVAE:
             self.latent_dim = latent_dim
             self.intermediate_dim = intermediate_dim
             self.n_epochs = n_epochs
-            self.original_dim = constant.N_MEASURES * constant.N_PITCHES  # 5x12
+            self.original_dim = constants.N_MEASURES * constants.N_PITCHES  # 5x12
 
             self.input_sequence = tf.keras.Input(shape=(self.original_dim,), name='input_sequence')  # flat input
             self.inputs_r = tf.keras.Input(shape=(1,), name='ground_truth')  # harmonic complexity val

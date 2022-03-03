@@ -26,10 +26,10 @@ class ConditionalVAE:
             self.intermediate_dim = intermediate_dim
             self.n_epoch = n_epoch
             self.batch_size = batch_size
-            self.original_dim = constant.N_MEASURES * constant.N_PITCHES  # 5x12
+            self.original_dim = constants.N_MEASURES * constants.N_PITCHES  # 5x12
 
             self.seq_input = Input(shape=(self.original_dim,), name="sequences_in")  # Flat chords sequence
-            self.label_input = Input(shape=(constant.REDUCED_COMPLEXITY_BINS,), name="bin_in")  # One-hot encode
+            self.label_input = Input(shape=(constants.REDUCED_COMPLEXITY_BINS,), name="bin_in")  # One-hot encode
 
             self.encoder = self.__build_encoder()
             self.decoder = self.__build_decoder()

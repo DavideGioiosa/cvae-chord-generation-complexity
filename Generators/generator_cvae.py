@@ -5,7 +5,7 @@ from utils import constants
 from utils.clean_algorithm import get_cleaned_sequence
 
 # Complexity classes have been reduced from 30 to 5
-# constant.REDUCED_COMPLEXITY_CLASSES
+# constants.REDUCED_COMPLEXITY_CLASSES
 
 
 class GeneratorCVAE:
@@ -24,7 +24,7 @@ class GeneratorCVAE:
         :return: latent vector [1, 7] for the decoder
         """
 
-        out = np.zeros((1, self.latent_dim + constant.REDUCED_COMPLEXITY_BINS))
+        out = np.zeros((1, self.latent_dim + constants.REDUCED_COMPLEXITY_BINS))
         out[:, complexity_bin_one_hot + 2] = 1.
 
         for i in range(len(z)):
@@ -37,7 +37,7 @@ class GeneratorCVAE:
         :return: decoded and 'cleaned' sequence obtained from z
         """
         decoded = self.decoder.predict(z_vec)
-        decoded = np.reshape(decoded, (constant.N_MEASURES, constant.N_PITCHES))
+        decoded = np.reshape(decoded, (constants.N_MEASURES, constants.N_PITCHES))
 
         # Cleaning with Cosine Distance
         decoded_z_clean = get_cleaned_sequence(decoded)

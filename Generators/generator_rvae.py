@@ -33,7 +33,7 @@ class LatentSpaceManagerRVAE:
 
         # Get coordinates ranges for each of the complexity classes on the C-axis
         # i.e. HC = 3 is in range [2,5] of the C-axis
-        for c in range(constant.COMPLEXITY_BINS):
+        for c in range(constants.COMPLEXITY_BINS):
             c_val = np.array(c)
             indexes = self.df.loc[self.df['Bin'] == c_val].index
             c_val = np.reshape(c_val, (1, 1))
@@ -74,7 +74,7 @@ class LatentSpaceManagerRVAE:
                     if i == 0:
                         print("Z-complexity axis value may be out of range and cause an invalid value")
                     else:
-                        print("Harmonic complexity reduced bin is ", i // constant.COMPLEXITY_RANGE)
+                        print("Harmonic complexity reduced bin is ", i // constants.COMPLEXITY_RANGE)
                     return
         else:
             for i, coord in enumerate(self.z_complexity_axis_coord_per_bin_list):
@@ -82,7 +82,7 @@ class LatentSpaceManagerRVAE:
                     if i == 0:
                         print("Z-complexity axis value may be out of range and cause an invalid value")
                     else:
-                        print("Harmonic complexity reduced bin is ", i // constant.COMPLEXITY_RANGE)
+                        print("Harmonic complexity reduced bin is ", i // constants.COMPLEXITY_RANGE)
                     return
 
         print("Z complexity-axis value may be too high and cause an invalid value")
@@ -95,8 +95,8 @@ class LatentSpaceManagerRVAE:
         """
         if c_bin < 0 or c_bin > 4:
             return "Complexity Range is not correct, allowed values: [0, 4]"
-        return self.z_complexity_axis_coord_per_bin_list[c_bin * constant.COMPLEXITY_RANGE:
-                                                    (c_bin + 1) * constant.COMPLEXITY_RANGE]
+        return self.z_complexity_axis_coord_per_bin_list[c_bin * constants.COMPLEXITY_RANGE:
+                                                    (c_bin + 1) * constants.COMPLEXITY_RANGE]
 
 
 class GeneratorRVAE:
@@ -111,7 +111,7 @@ class GeneratorRVAE:
         """
         z = np.reshape(z, [-1, 2])  # decoder input format
         decoded = self.decoder.predict(z)
-        decoded = np.reshape(decoded, (constant.N_MEASURES, constant.N_PITCHES))
+        decoded = np.reshape(decoded, (constants.N_MEASURES, constants.N_PITCHES))
 
         # Cleaning Algorithm using Cosine Distance
         decoded_z_clean = get_cleaned_sequence(decoded)

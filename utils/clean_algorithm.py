@@ -65,6 +65,6 @@ def get_cleaned_sequence(raw_decoded_sequence):
         cleaned_chord_PR = CHORDS_PR_DICT[cleaned_chord]
         cleaned_sequence.append(cleaned_chord_PR)
 
-    cleaned_sequence = np.reshape(cleaned_sequence, (constant.N_MEASURES, constant.N_PITCHES))
+    cleaned_sequence = np.reshape(cleaned_sequence, (constants.N_MEASURES, constants.N_PITCHES))
 
     return cleaned_sequence
