@@ -76,7 +76,7 @@ class GeneratorCVAE:
             return "Complexity Range is not correct, allowed values: [0, 4]"
 
         if z_x < -5 or z_x > 5 or z_y < -5 or z_y > 5:
-            print("Z values may be too high")
+            print("Z values may be out of range and cause an invalid value")
 
         z_ = [z_x, z_y]
         vec = self.get_latent_vector(c_bin, z_)  # concat with complexity

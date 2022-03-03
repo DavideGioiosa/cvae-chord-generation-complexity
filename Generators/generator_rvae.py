@@ -176,7 +176,7 @@ class GeneratorRVAE:
         :return: chords sequence
         """
         if z_free < -4 or z_free > 4:
-            print("Z free-axis value may be too high")
+            print("Z-free axis value may be out of range and cause an invalid value")
 
         # Print the bin of reduced harmonic complexity corresponding to the coordinate on the c-axis
         self.latent_space_manager.get_complexity_bin_reduced_from_coord(z_complexity)
