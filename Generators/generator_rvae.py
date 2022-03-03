@@ -1,5 +1,5 @@
 import numpy as np
-import constant
+from utils import constants
 import random
 
 from utils.clean_algorithm import get_cleaned_sequence

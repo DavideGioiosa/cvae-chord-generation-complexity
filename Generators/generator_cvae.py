@@ -1,6 +1,6 @@
 import numpy as np
 import random
-import constant
+from utils import constants
 
 from utils.clean_algorithm import get_cleaned_sequence
 

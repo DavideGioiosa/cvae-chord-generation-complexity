@@ -11,7 +11,8 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
-import constant
+from utils import constants
+
 
 # Harmonic Complexity bins reduced from 30 to 5
 # constant.REDUCED_COMPLEXITY_CLASSES
@@ -36,9 +37,9 @@ class ConditionalVAE:
             self.__set_loss()
 
         # else:
-        # self.encoder = tf.keras.models.load_model("CVAE_final/cvae_encoder.h5")
-        # self.decoder = tf.keras.models.load_model("CVAE_final/cvae_decoder.h5")
-        # self.conditional_vae = tf.keras.models.load_model("CVAE_final/cvae_full.h5")
+        # self.encoder = tf.keras.models.load_model(constant.CVAE_ENCODER_PATH)
+        # self.decoder = tf.keras.models.load_model(constant.CVAE_DECODER_PATH)
+        # self.conditional_vae = tf.keras.models.load_model(constant.CVAE_FULL_PATH)
 
     def __sampling(self, args):
         z_mean, z_log_var = args

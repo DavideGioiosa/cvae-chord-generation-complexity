@@ -5,7 +5,8 @@ Regression VAE
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-import constant
+
+from utils import constants
 
 
 class RegressionVAE:
