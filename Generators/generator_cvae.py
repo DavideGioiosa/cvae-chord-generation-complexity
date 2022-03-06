@@ -44,7 +44,7 @@ class GeneratorCVAE:
 
         return decoded_z_clean
 
-    def generate_with_complexity(self, c_bin):
+    def generate_with_complexity(self, c_bin, verbose=True):
         """
         Generate chords sequence with c_bin harmonic complexity
         :param c_bin: harmonic complexity bin [0-4]
@@ -57,14 +57,15 @@ class GeneratorCVAE:
         z_y = round(random.uniform(-2.5, 2.5), 4)
         z_ = [z_x, z_y]
 
-        print("\nZ_: ", z_)
+        if verbose:
+            print("\nZ_: ", z_)
         vec = self.get_latent_vector(c_bin, z_)  # concat with complexity
 
         generated_seq = self.__decode(vec)
 
         return generated_seq
 
-    def generate_with_complexity_and_z_coord(self, c_bin, z_x, z_y):
+    def generate_with_complexity_and_z_coord(self, c_bin, z_x, z_y, verbose=True):
         """
         Generate chords sequence with the indicated harmonic complexity and z coords
         :param c_bin: complexity value [0-4]
@@ -79,6 +80,10 @@ class GeneratorCVAE:
             print("Z values may be out of range and cause an invalid value")
 
         z_ = [z_x, z_y]
+
+        if verbose:
+            print("\nZ_: ", z_)
+
         vec = self.get_latent_vector(c_bin, z_)  # concat with complexity
 
         generated_seq = self.__decode(vec)

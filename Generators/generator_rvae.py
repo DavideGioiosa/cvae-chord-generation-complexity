@@ -118,7 +118,7 @@ class GeneratorRVAE:
 
         return decoded_z_clean
 
-    def generate_with_complexity_reduced(self, c_bin):
+    def generate_with_complexity_reduced(self, c_bin, verbose=True):
         """
         Generation of chords sequence with c_bin complexity
         :param c_bin: harmonic complexity bin [0-4]
@@ -129,20 +129,24 @@ class GeneratorRVAE:
             return "Complexity Range is not correct, allowed values: [0, 4]"
 
         c_range = self.latent_space_manager.get_range_of_complexity_bin_reduced(c_bin)
-        print("Range on c-axis for the complexity bin (reduced) ", c_bin, ":")
-        print(c_range)
+
+        if verbose:
+            print("Range on c-axis for the complexity bin (reduced) ", c_bin, ":")
+            print(c_range)
 
         # get a random value in the range of the complexity bin (reduced) and for the free axis
         random_z_complexity_ax = round(random.uniform(c_range[0], c_range[-1]), 4)
         random_free_ax = round(random.uniform(-2.5, 2.5), 4)
 
-        print("Z: ", random_z_complexity_ax, " ", random_free_ax)
+        if verbose:
+            print("Z: ", random_z_complexity_ax, " ", random_free_ax)
+
         if self.latent_space_manager.is_complexity_axis_vertical:
             return self.decode([random_free_ax, random_z_complexity_ax])
         else:
             return self.decode([random_z_complexity_ax, random_free_ax])
 
-    def generate_with_complexity_reduced_and_z_free(self, c_bin, z_free):
+    def generate_with_complexity_reduced_and_z_free(self, c_bin, z_free, verbose=True):
         """
         Generation of a chords sequence with c_bin complexity and setting the coordinate on the free axis
         :param c_bin: harmonic complexity bin [0-4]
@@ -156,8 +160,11 @@ class GeneratorRVAE:
             print("Z free-axis value may be too high")
 
         c_range = self.latent_space_manager.get_range_of_complexity_bin_reduced(c_bin)
-        print("Range on c-axis for the complexity bin (reduced) ", c_bin, ":")
-        print(c_range)
+
+        if verbose:
+            print("Range on c-axis for the complexity bin (reduced) ", c_bin, ":")
+            print(c_range)
+
         # get random value in the range
         random_z_complexity_ax = round(random.uniform(c_range[0], c_range[-1]), 4)
 
