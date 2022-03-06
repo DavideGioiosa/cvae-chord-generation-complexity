@@ -57,7 +57,7 @@ def symbolic_2_midi(chords_sequence_piano_roll, midi_name):
 # A Data-Driven Model of Tonal Chord Sequence Complexity
 # *****
 
-def create_midi(filename, bpm, events, reverb=64, path='./Generated_Midi'):
+def create_midi(filename, bpm, events, reverb=64, path='./Generated_outputs'):
     """
     events = [event1, ..., eventN]
     where each event is a dict
