@@ -6,9 +6,10 @@ Author: [@DavideGioiosa](https://github.com/DavideGioiosa)
 
 ## Main Technologies
 - Python 3.7
-- Tensorflow, Keras
+- Tensorflow/Keras
 - Pandas, Numpy, Matplotlib
 - Flask, AWS
+- MIDI, .wav
 
 ## Goal 
 
