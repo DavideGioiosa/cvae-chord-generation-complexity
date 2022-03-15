@@ -29,29 +29,34 @@ The starting dataset used for this experimental thesis comes from this research:
 <p align="center"><img width="300" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/chord_multi_hot_vector.png"></p>
 
 ## Conditional Variational Autoencoder
-The Conditional Variational Autoencoder (CVAE) is an extension of the VAE model and it's a type of Conditional Architectures, which are networks characterized by the addition of the conditioning feature as an additional input layer to the network model. This type of model provide the ability to have a control over the data during the generation process through the conditioning with the target feature.
+The Conditional Variational Autoencoder (CVAE) is an extension of the VAE model and it's a type of Conditional Architectures. They are a type of Neural Networks characterized by the addition of the conditioning feature as an extra input layer to the network model. This model provides the possibility of having control over the data during the generation process through the conditioning with the target feature. In this research the harmonic complexity is the parameter used to condition the VAE.
 <p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/Conditional_VAE.png" ></p>
 
 
+In the next section the two implemented models are simply described, more information on their mathematical formulation is available in the thesis.
+
 ### Model A
-This first model of CVAE incorporates the conditioning information by concatenating the layer at the input of both the encoder.
+This first model of CVAE incorporates the conditioning information by concatenating the complexity vector as input the encoder and the decoder.
 <p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_1.png"></p>
 
 ### Model B
-This second model of CVAE is composed by the combination of the standard VAE with a Regressor, which has as input the complexity value that explicitly conditions the latent representation of the data.
+This second model of CVAE is composed by the combination of the standard VAE with a Regressor (RVAE), which has as input the complexity value that explicitly conditions the latent representation of the data.
 <p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2.png"></p>
 
-The interesting thing of this model is that it allows us to explicitly condition the distribution of the data in the latent space with respect to the harmonic complexity, obtaining a disentangled-dimension that encodes this property. 
+This network allows us to explicitly condition the distribution of the data in the latent space with respect to the harmonic complexity, obtaining a disentangled-dimension that encodes this property. This means that changes along a dimension are explained by the harmonic complexity, while they are relatively invariant to changes in other factors. 
 <p align="center"><img width="250" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_latent_space.png"></p>
 
 #### Generation of new chord progressions
 The two trained CVAE can generate new chord sequences with the desired harmonic complexity.
 <p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAEs_generation.png"></p>
 
+Examples of generating chord sequences using harmonic complexity with the CVAE and RVAE models are provided in the two .ipynb files in symbolic, midi and wav formats.
 
 ### Listening Test  
 A web-app has been designed using **Flask** and **AWS** to collect ratings on the generated chord sequences. In the fist part of the experiment, the participants are profied based on their music background using the self-report questionnaire of the _[Goldsmiths Musical Sophistication Index](https://www.gold.ac.uk/music-mind-brain/gold-msi/)_. The second part is the perceptual test in which the participants were asked to express their level of agreement to the indicated complexity value provided for each chord progressions. The evaluation is expressed using the Likert scale scores from 0 to 4, where completely agree is the highest score and completely disagree the lowest one.
 
 
-The conclusions of the different experiments can be found in the [Thesis](https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Modeling_Harmonic_Complexity_in_Automatic_Music_Generation_using_Conditional_Variational_Autoencoders.pdf).
+Further information and the results of the different experiments can be found in the [Thesis](https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Modeling_Harmonic_Complexity_in_Automatic_Music_Generation_using_Conditional_Variational_Autoencoders.pdf).
 
+## Currently working on the paper 
+The dataset and the publication will be available in the upcoming months.
