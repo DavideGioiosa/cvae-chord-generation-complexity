@@ -33,7 +33,7 @@ The Conditional Variational Autoencoder (CVAE) is an extension of the VAE model 
 <p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/Conditional_VAE.png" ></p>
 
 
-In the next section the two implemented models are simply described, more information on their mathematical formulation is available in the thesis.
+_In the next section the two implemented models are simply described, more information on their mathematical formulation is available in the thesis._
 
 ### Model A
 This first model of CVAE incorporates the conditioning information by concatenating the complexity vector as input the encoder and the decoder.
@@ -46,7 +46,7 @@ This second model of CVAE is composed by the combination of the standard VAE wit
 This network allows us to explicitly condition the distribution of the data in the latent space with respect to the harmonic complexity, obtaining a disentangled-dimension that encodes this property. This means that changes along a dimension are explained by the harmonic complexity, while they are relatively invariant to changes in other factors. 
 <p align="center"><img width="250" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_latent_space.png"></p>
 
-#### Generation of new chord progressions
+### Generation of new chord progressions
 The two trained CVAE can generate new chord sequences with the desired harmonic complexity.
 <p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAEs_generation.png"></p>
 
@@ -56,7 +56,7 @@ Examples of generating chord sequences using harmonic complexity with the CVAE a
 A web-app has been designed using **Flask** and **AWS** to collect ratings on the generated chord sequences. In the fist part of the experiment, the participants are profied based on their music background using the self-report questionnaire of the _[Goldsmiths Musical Sophistication Index](https://www.gold.ac.uk/music-mind-brain/gold-msi/)_. The second part is the perceptual test in which the participants were asked to express their level of agreement to the indicated complexity value provided for each chord progressions. The evaluation is expressed using the Likert scale scores from 0 to 4, where completely agree is the highest score and completely disagree the lowest one.
 
 
+## Currently working on the paper 
 Further information and the results of the different experiments can be found in the [Thesis](https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Modeling_Harmonic_Complexity_in_Automatic_Music_Generation_using_Conditional_Variational_Autoencoders.pdf).
 
-## Currently working on the paper 
-The dataset and the publication will be available in the upcoming weeks.
+The dataset and the publication of this experimental research will be available in the upcoming weeks.
