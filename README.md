@@ -41,10 +41,10 @@ This first model of CVAE incorporates the conditioning information by concatenat
 
 ### Model B
 This second model of CVAE is composed by the combination of the standard VAE with a Regressor (RVAE), which explicitly condition the distribution of the data in the latent space with respect to the harmonic complexity.
-<p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2.png"></p>
+<p align="center"><img width="450" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/RVAE.png"></p>
 
 This network allows us to obtain a disentangled-dimension that encodes the harmonic complexity. This means that changes along a dimension are explained by this feature, while they are relatively invariant to changes in other factors. 
-<p align="center"><img width="250" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/CVAE_2_latent_space.png"></p>
+<p align="center"><img width="250" src="https://github.com/DavideGioiosa/master-thesis-polimi/blob/main/Img/RVAE_latent_space.png"></p>
 
 ### Generation of new chord progressions
 The two trained CVAE can generate new chord sequences with the desired harmonic complexity.
