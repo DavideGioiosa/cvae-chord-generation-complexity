@@ -15,7 +15,7 @@ def get_chords_and_pc_bass(chords_sequence_piano_roll):
     bass_notes = []
     chords_name_and_type = []
     ch_seq_symbolic = \
-        symbolic_format_converter.get_chords_sequence_symbolic_from_piano_roll(chords_sequence_piano_roll)
+        symbolic_format_converter.get_chord_sequence_symbolic_from_piano_roll(chords_sequence_piano_roll)
 
     for ch_name_and_type in ch_seq_symbolic:
         chords_name_and_type.append(ch_name_and_type)

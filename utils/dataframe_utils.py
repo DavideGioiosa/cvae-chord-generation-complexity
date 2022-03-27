@@ -24,7 +24,7 @@ def split_train_test_validation(dataframe, val_size=0.1, test_size=0.2):
     return train_data, valid_data, test_data
 
 
-def get_chords_sequences_from_csv(dataframe):
+def get_chord_sequences_from_csv(dataframe):
     """
     Transform each chords sequence from list of strings (each one
     representing a chord) to list of np.array
@@ -67,3 +67,16 @@ def decrease_num_of_bins(dataset_orig, new_n_of_bins):
             dataset.loc[dataset.Bin == (j + i * bin_size), 'Bin'] = i
 
     return dataset
+
+
+def get_chord_sequences_with_complexity_bin(dataset, dataset_sequences, harmonic_complexity_bin):
+    """
+    return the list of chord sequences in the dataset with the given harmonic complexity value
+    """
+    indices = dataset.loc[dataset.Bin == harmonic_complexity_bin].index
+
+    chord_sequences = []
+    for i in indices:
+        chord_sequences.append(dataset_sequences[i])
+
+    return chord_sequences

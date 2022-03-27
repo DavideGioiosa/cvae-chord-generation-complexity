@@ -13,7 +13,7 @@ def get_chord_symbolic_from_piano_roll(piano_roll_chord):
     return None
 
 
-def get_chords_sequence_symbolic_from_piano_roll(piano_roll_sequence):
+def get_chord_sequence_symbolic_from_piano_roll(piano_roll_sequence):
     """
     Converts chords sequence from piano roll format to symbolic one
     """
