@@ -56,8 +56,7 @@ Examples of generating chord sequences using harmonic complexity with the CVAE a
 ### Listening Test  
 A web-app has been designed using **Flask** and **AWS** to collect ratings on the generated chord sequences. In the fist part of the experiment, the participants are profied based on their music background using the self-report questionnaire of the _[Goldsmiths Musical Sophistication Index](https://www.gold.ac.uk/music-mind-brain/gold-msi/)_. The second part is the perceptual test in which the participants were asked to express their level of agreement to the indicated complexity value provided for each chord progressions. The evaluation is expressed using the Likert scale scores from 0 to 4, where completely agree is the highest score and completely disagree the lowest one.
 
+## Research Article 
+The article of this research is published in _EURASIP Journal on Audio, Speech, and Music Processing_; more information and the results of the different experiments are available in the [Article](https://asmp-eurasipjournals.springeropen.com/?gclid=Cj0KCQjwu-KiBhCsARIsAPztUF3Lfscl9Ji7vS_UIeDo-V6NU1amXCl7maKgKmxnIL2I1PKGx3UGwssaAiYtEALw_wcB).
 
-## Currently working on the paper 
-Further information and the results of the different experiments can be found in the [Thesis](https://github.com/DavideGioiosa/master-thesis-polimi/blob/master/Modeling_Harmonic_Complexity_in_Automatic_Music_Generation_using_Conditional_Variational_Autoencoders.pdf).
-
-The dataset and the publication of this experimental research will be available in the upcoming weeks.
+Further examples of the outputs of the models are available on this [Website](https://lucacoma.github.io/vae_complexity_website/).
